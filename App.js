@@ -1,24 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alart } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
 
 export default function App() {
   const [email, setEmail] = useState('');
-  const [pass, setpass] = useState('');
+  const [password, setPassword] = useState('');
 
-  const Alart = () => {
-    Alart.alart('Signpu Dietails', `email:${email}, \n pass:${pass}`)
-  };
+  const handleSignUp  = () => {
+    Alert.alert('Signpu Dietails', `Email: ${email}\nPass: ${password}`); };
   return (
     <View style={styles.container}>
-      <Text style={styles.signup}>Sign Up</Text>
-      <TextInput placeholder='Enter Email Id' value='email' style={styles.input} onChangeText={setEmail} />
-      <TextInput placeholder='Enter Password' value='pass' style={styles.input}  onChangeText={setpass}/>
-      <TouchableOpacity style={styles.btn} onPress={Alart}>
-        <Text style={styles.btntext}>Signup</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+  <Text style={styles.signup}>Sign Up</Text>
+  <TextInput
+    placeholder="Enter Email Id"
+    style={styles.input}
+    value={email}  // State-bound value for email
+    onChangeText={setEmail}  // Update email state
+  />
+  <TextInput
+    placeholder="Enter Password"
+    style={styles.input}
+    secureTextEntry  // Hide the password text
+    value={password}  // State-bound value for password
+    onChangeText={setPassword}  // Update password state
+  />
+  <TouchableOpacity style={styles.btn} onPress={handleSignUp}>
+    <Text style={styles.btntext}>Sign Up</Text>
+  </TouchableOpacity>
+  <StatusBar style="auto" />
+</View>
   );
 }
 
