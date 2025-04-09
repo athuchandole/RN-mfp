@@ -1,9 +1,8 @@
-// screen/Login.jsx
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -38,8 +37,13 @@ const Login = () => {
         <Text style={styles.buttonText}>LOG IN</Text>
       </TouchableOpacity>
 
-      <Text style={styles.link}>Forgot password?</Text>
-      <Text style={styles.link}>Sign up</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+        <Text style={styles.link}>Forgot password?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+        <Text style={styles.link}>Sign up</Text>
+      </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
