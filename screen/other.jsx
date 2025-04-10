@@ -2,29 +2,24 @@
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import React from 'react';
 import Greet from '../components/Greet';
+import CustomBtn from '../components/CustomBtn';
+import Login from './login';
 
 const Other = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Greet name="Atharv" />
-            <Text style={styles.text}>Other Practice</Text>
+            <Text style={styles.text}>Practice List</Text>
 
             <View style={styles.row}>
-                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.btnText}>Login Page</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('RandomImg')}>
-                    <Text style={styles.btnText}>Image</Text>
-                </TouchableOpacity>
+                <CustomBtn title="Login" onPress={() => navigation.navigate('Login')} />
+                <CustomBtn title="Image" onPress={() => navigation.navigate('RandomImg')} />
+
             </View>
 
             <View style={styles.row}>
-                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('CallGreet')}>
-                    <Text style={styles.btnText}>Greet</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btnText}>Button 4</Text>
-                </TouchableOpacity>
+                <CustomBtn title="Greet" onPress={() => navigation.navigate('CallGreet')} />
+                <CustomBtn title="4" onPress={() => navigation.navigate('CallGreet')} />
             </View>
         </View>
     );
@@ -48,16 +43,5 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginBottom: 15,
         gap: 15,
-    },
-    btn: {
-        backgroundColor: '#001F3F',
-        paddingVertical: 12,
-        paddingHorizontal: 50,
-        borderRadius: 8,
-        marginHorizontal: 10,
-    },
-    btnText: {
-        color: '#fff',
-        fontSize: 16,
     },
 });
