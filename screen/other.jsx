@@ -11,7 +11,7 @@ const Other = ({ navigation }) => {
                 <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.btnText}>Login Page</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('RandomImg')}>
                     <Text style={styles.btnText}>Image</Text>
                 </TouchableOpacity>
             </View>
