@@ -45,6 +45,10 @@ const Login = ({ navigation }) => {
         <Text style={styles.link}>Sign up</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity onPress={() => navigation.navigate('other')}>
+        <Text style={styles.link}>Other Practice</Text>
+      </TouchableOpacity>
+
       <StatusBar style="auto" />
     </View>
   );

@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screen/login';
 import Signup from './screen/Signup';
 import ForgotPassword from './screen/ForgotPassword';
+import other from './screen/other';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +15,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <SafeAreaView style={{ flex: 1 }}>
-        <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="other" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="other" component={other} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
