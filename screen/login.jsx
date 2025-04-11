@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
 import CustInput from '../components/CustInput';
+import CustomBtn from '../components/CustomBtn';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -32,9 +33,7 @@ const Login = ({ navigation }) => {
         secureTextEntry={true}
       />
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>LOG IN</Text>
-      </TouchableOpacity>
+      <CustomBtn title="Login" onPress={handleLogin} />
 
       <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
         <Text style={styles.link}>Forgot password?</Text>
