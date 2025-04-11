@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
+import CustInput from '../components/CustInput';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -17,7 +18,6 @@ const Login = ({ navigation }) => {
       <Text style={styles.label}>Email</Text>
       <TextInput
         placeholder="Email"
-        style={styles.input}
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -27,10 +27,9 @@ const Login = ({ navigation }) => {
       <Text style={styles.label}>Password</Text>
       <TextInput
         placeholder="Password"
-        style={styles.input}
         value={password}
         onChangeText={setPassword}
-        secureTextEntry
+        secureTextEntry={true}
       />
 
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
@@ -73,13 +72,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#001F3F',
   },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 20,
-  },
+
   button: {
     backgroundColor: '#001F3F',
     padding: 15,
