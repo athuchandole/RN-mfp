@@ -4,6 +4,7 @@ import Greet from '../components/Greet';
 import CustomBtn from '../components/CustomBtn';
 import Login from './login';
 import SView from './ScrollView/SView';
+import Flist from './Flatlist/Flist';
 
 const Other = ({ navigation }) => {
     return (
@@ -19,6 +20,10 @@ const Other = ({ navigation }) => {
             <View style={styles.row}>
                 <CustomBtn title="Greet" onPress={() => navigation.navigate('CallGreet')} />
                 <CustomBtn title="ScroolView" onPress={() => navigation.navigate('SView')} />
+            </View>
+            <View style={styles.row}>
+                <CustomBtn title="Flat List" onPress={() => navigation.navigate('Flist')} />
+                <CustomBtn title="ScroolView" onPress={() => navigation.navigate('')} />
             </View>
         </View>
     );

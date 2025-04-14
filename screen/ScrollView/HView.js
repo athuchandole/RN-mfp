@@ -12,7 +12,6 @@ const HView = ({ }) => {
             <View style={[styles.container, { paddingTop: getStatusBarHeight() }]}>
                 <Text style={styles.text}> Horizhontal View</Text>
                 <ScrollView horizontal={true}
-
                 >
                     <View style={{ height: 150, width: "100", backgroundColor: 'pink' }}></View>
                     <View style={{ height: 150, width: "100", backgroundColor: 'red' }}></View>

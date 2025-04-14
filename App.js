@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -12,6 +12,7 @@ import RandomImg from './screen/RandomImg';
 import CallGreet from './screen/CallGreet';
 import SView from './screen/ScrollView/SView';
 import HView from './screen/ScrollView/HView';
+import Flist from './screen/Flatlist/Flist';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const App = () => {
           <Stack.Screen name="CallGreet" component={CallGreet} />
           <Stack.Screen name="SView" component={SView} />
           <Stack.Screen name="HView" component={HView} />
+          <Stack.Screen name="Flist" component={Flist} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
