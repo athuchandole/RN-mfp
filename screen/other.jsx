@@ -1,9 +1,9 @@
-// screen/other.jsx
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import React from 'react';
 import Greet from '../components/Greet';
 import CustomBtn from '../components/CustomBtn';
 import Login from './login';
+import SView from './SView';
 
 const Other = ({ navigation }) => {
     return (
@@ -14,12 +14,11 @@ const Other = ({ navigation }) => {
             <View style={styles.row}>
                 <CustomBtn title="Login" onPress={() => navigation.navigate('Login')} />
                 <CustomBtn title="Image" onPress={() => navigation.navigate('RandomImg')} />
-
             </View>
 
             <View style={styles.row}>
                 <CustomBtn title="Greet" onPress={() => navigation.navigate('CallGreet')} />
-                <CustomBtn title="4" onPress={() => navigation.navigate('CallGreet')} />
+                <CustomBtn title="ScroolView" onPress={() => navigation.navigate('SView')} />
             </View>
         </View>
     );
