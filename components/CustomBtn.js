@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#fff',
         fontSize: 16,
+        textAlign: 'center'
     },
 
 })

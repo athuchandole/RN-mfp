@@ -10,7 +10,8 @@ import ForgotPassword from './screen/ForgotPassword';
 import Other from './screen/other';
 import RandomImg from './screen/RandomImg';
 import CallGreet from './screen/CallGreet';
-import SView from './screen/SView';
+import SView from './screen/ScrollView/SView';
+import HView from './screen/ScrollView/HView';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ const App = () => {
           <Stack.Screen name="RandomImg" component={RandomImg} />
           <Stack.Screen name="CallGreet" component={CallGreet} />
           <Stack.Screen name="SView" component={SView} />
+          <Stack.Screen name="HView" component={HView} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>

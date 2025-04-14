@@ -3,7 +3,7 @@ import React from 'react';
 import Greet from '../components/Greet';
 import CustomBtn from '../components/CustomBtn';
 import Login from './login';
-import SView from './SView';
+import SView from './ScrollView/SView';
 
 const Other = ({ navigation }) => {
     return (
