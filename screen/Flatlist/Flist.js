@@ -1,51 +1,55 @@
 import React from 'react';
-import { View, FlatList, Text, StyleSheet } from 'react-native';
+import { FlatList, ScrollView, View, StyleSheet, Text } from 'react-native';
+
+// Temporary StudentCard component if not defined elsewhere
+const StudentCard = ({ name, lastname, rollNumber }) => (
+    <View style={styles.card}>
+        <Text>{`${rollNumber}. ${name} ${lastname}`}</Text>
+    </View>
+);
+
+const originalData = [
+    { name: "Megan", lastname: "Chang", rollNumber: 1 },
+    { name: "Robert", lastname: "Green", rollNumber: 2 },
+    { name: "William", lastname: "Sullivan", rollNumber: 3 },
+    { name: "Kristen", lastname: "Turner", rollNumber: 4 },
+    { name: "Thomas", lastname: "Silva", rollNumber: 5 }
+];
+
+const data = Array.from({ length: 500 }, (_, i) => {
+    const item = originalData[i % originalData.length];
+    return {
+        ...item,
+        rollNumber: i + 1
+    };
+});
 
 const Flist = () => {
-    const data = [
-        { key: 'Amit' },
-        { key: 'SK' },
-        { key: 'Atharv' },
-        { key: 'A' },
-        { key: 'B' },
-        { key: 'C' },
-        { key: 'D' },
-        { key: 'E' },
-        { key: 'F' },
-        { key: 'G' },
-        { key: 'H' },
-        { key: 'I' },
-        { key: 'J' },
-        { key: 'K' },
-        { key: 'L' },
-        { key: 'M' },
-        { key: 'N' },
-        { key: 'O' },
-        { key: 'P' },
-        { key: 'Q' },
-        { key: 'R' },
-        { key: 'S' },
-        { key: 'T' },
-        { key: 'U' },
-        { key: 'V' },
-        { key: 'W' },
-        { key: 'X' },
-        { key: 'Y' },
-        { key: 'Z' }
-
-    ];
-
     return (
         <View style={styles.container}>
             <FlatList
                 data={data}
+                keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
-                    <View style={styles.item}>
-                        <Text style={styles.text}>{item.key}</Text>
-                    </View>
+                    <StudentCard
+                        name={item.name}
+                        lastname={item.lastname}
+                        rollNumber={item.rollNumber}
+                    />
                 )}
-                keyExtractor={(item) => item.key}
+                style={styles.list}
             />
+
+            <ScrollView style={styles.scrollView}>
+                {data.map((item, index) => (
+                    <StudentCard
+                        key={index}
+                        name={item.name}
+                        lastname={item.lastname}
+                        rollNumber={item.rollNumber}
+                    />
+                ))}
+            </ScrollView>
         </View>
     );
 };
@@ -53,16 +57,21 @@ const Flist = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 50,
+        padding: 16,
+        marginTop: 40,
     },
-    item: {
-        padding: 20,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
+    list: {
+        flex: 1,
+        marginBottom: 20,
     },
-    text: {
-        fontSize: 18,
-        color: '#333',
+    scrollView: {
+        flex: 1,
+    },
+    card: {
+        padding: 10,
+        marginVertical: 4,
+        backgroundColor: '#f0f0f0',
+        borderRadius: 4,
     },
 });
 
