@@ -5,6 +5,8 @@ import CustomBtn from '../components/CustomBtn';
 import Login from './login';
 import SView from './ScrollView/SView';
 import Flist from './Flatlist/Flist';
+import FlatListScreen from './FlatListScreen';
+import ScrollViewScreen from './ScrollViewScreen';
 
 const Other = ({ navigation }) => {
     return (
@@ -23,7 +25,10 @@ const Other = ({ navigation }) => {
             </View>
             <View style={styles.row}>
                 <CustomBtn title="Flat List" onPress={() => navigation.navigate('Flist')} />
-                <CustomBtn title="ScroolView" onPress={() => navigation.navigate('')} />
+            </View>
+            <View style={styles.row}>
+                <CustomBtn title="Flat List" onPress={() => navigation.navigate('FlatListScreen')} />
+                <CustomBtn title="Scroll View" onPress={() => navigation.navigate('ScrollViewScreen')} />
             </View>
         </View>
     );

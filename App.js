@@ -13,6 +13,8 @@ import CallGreet from './screen/CallGreet';
 import SView from './screen/ScrollView/SView';
 import HView from './screen/ScrollView/HView';
 import Flist from './screen/Flatlist/Flist';
+import FlatListScreen from './screen/FlatListScreen';
+import ScrollViewScreen from './screen/ScrollViewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +32,8 @@ const App = () => {
           <Stack.Screen name="SView" component={SView} />
           <Stack.Screen name="HView" component={HView} />
           <Stack.Screen name="Flist" component={Flist} />
+          <Stack.Screen name="FlatListScreen" component={FlatListScreen} />
+          <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
