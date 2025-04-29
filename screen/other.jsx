@@ -7,6 +7,8 @@ import SView from './ScrollView/SView';
 import Flist from './Flatlist/Flist';
 import FlatListScreen from './FlatListScreen';
 import ScrollViewScreen from './ScrollViewScreen';
+import Card from '../components/Card';
+import useCard from './useCard';
 
 const Other = ({ navigation }) => {
     return (
@@ -18,7 +20,6 @@ const Other = ({ navigation }) => {
                 <CustomBtn title="Login" onPress={() => navigation.navigate('Login')} />
                 <CustomBtn title="Image" onPress={() => navigation.navigate('RandomImg')} />
             </View>
-
             <View style={styles.row}>
                 <CustomBtn title="Greet" onPress={() => navigation.navigate('CallGreet')} />
                 <CustomBtn title="ScroolView" onPress={() => navigation.navigate('SView')} />
@@ -29,6 +30,10 @@ const Other = ({ navigation }) => {
             <View style={styles.row}>
                 <CustomBtn title="Flat List" onPress={() => navigation.navigate('FlatListScreen')} />
                 <CustomBtn title="Scroll View" onPress={() => navigation.navigate('ScrollViewScreen')} />
+            </View>
+            <View style={styles.row}>
+                <CustomBtn title="useCard" onPress={() => navigation.navigate('useCard')} />
+                <CustomBtn title="" onPress={() => navigation.navigate('')} />
             </View>
         </View>
     );

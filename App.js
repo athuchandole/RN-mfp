@@ -15,6 +15,7 @@ import HView from './screen/ScrollView/HView';
 import Flist from './screen/Flatlist/Flist';
 import FlatListScreen from './screen/FlatListScreen';
 import ScrollViewScreen from './screen/ScrollViewScreen';
+import useCard from './screen/useCard';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ const App = () => {
           <Stack.Screen name="Flist" component={Flist} />
           <Stack.Screen name="FlatListScreen" component={FlatListScreen} />
           <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
+          <Stack.Screen name="useCard" component={useCard} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
