@@ -3,6 +3,8 @@ import { FlatList, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import ListSeparator from '../components/ListSeparator';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
+import { Swipeable } from 'react-native-gesture-handler';
 
 const messages = [
     {
@@ -20,17 +22,29 @@ const messages = [
 ];
 
 const MessagesScreen = () => {
+    const handleDelete = (message) => {
+        // Delete logic here (e.g., update state or make API call)
+        console.log('Delete tapped:', message);
+    };
+
     return (
         <Screen style={styles.container}>
             <FlatList
                 data={messages}
                 keyExtractor={(message) => message.id.toString()}
                 renderItem={({ item }) => (
-                    <ListItem
-                        title={item.title}
-                        subTitle={item.description}
-                        image={item.image}
-                    />
+                    <Swipeable
+                        renderRightActions={() => (
+                            <ListItemDeleteAction onPress={() => handleDelete(item)} />
+                        )}
+                    >
+                        <ListItem
+                            title={item.title}
+                            subTitle={item.description}
+                            image={item.image}
+                            onPress={() => console.log('Message Selected', item)}
+                        />
+                    </Swipeable>
                 )}
                 ItemSeparatorComponent={ListSeparator}
             />

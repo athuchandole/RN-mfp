@@ -1,5 +1,6 @@
 import React from 'react';
-import { FlatList, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -23,27 +24,29 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Stack.Navigator initialRouteName="other" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="other" component={Other} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
-          <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-          <Stack.Screen name="RandomImg" component={RandomImg} />
-          <Stack.Screen name="CallGreet" component={CallGreet} />
-          <Stack.Screen name="SView" component={SView} />
-          <Stack.Screen name="HView" component={HView} />
-          <Stack.Screen name="Flist" component={Flist} />
-          <Stack.Screen name="FlatListScreen" component={FlatListScreen} />
-          <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
-          <Stack.Screen name="useCard" component={useCard} />
-          <Stack.Screen name="ListingDetail" component={ListingDetail} />
-          <Stack.Screen name="ViewImageScreen" component={ViewImageScreen} />
-          <Stack.Screen name="MessagesScreen" component={MessagesScreen} />
-        </Stack.Navigator>
-      </SafeAreaView>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Stack.Navigator initialRouteName="other" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="other" component={Other} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Signup" component={Signup} />
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+            <Stack.Screen name="RandomImg" component={RandomImg} />
+            <Stack.Screen name="CallGreet" component={CallGreet} />
+            <Stack.Screen name="SView" component={SView} />
+            <Stack.Screen name="HView" component={HView} />
+            <Stack.Screen name="Flist" component={Flist} />
+            <Stack.Screen name="FlatListScreen" component={FlatListScreen} />
+            <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
+            <Stack.Screen name="useCard" component={useCard} />
+            <Stack.Screen name="ListingDetail" component={ListingDetail} />
+            <Stack.Screen name="ViewImageScreen" component={ViewImageScreen} />
+            <Stack.Screen name="MessagesScreen" component={MessagesScreen} />
+          </Stack.Navigator>
+        </SafeAreaView>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 };
 
