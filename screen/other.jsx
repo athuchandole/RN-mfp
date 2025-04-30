@@ -9,6 +9,7 @@ import FlatListScreen from './FlatListScreen';
 import ScrollViewScreen from './ScrollViewScreen';
 import Card from '../components/Card';
 import useCard from './useCard';
+import ListingDetail from './ListingDetail';
 
 const Other = ({ navigation }) => {
     return (
@@ -33,7 +34,7 @@ const Other = ({ navigation }) => {
             </View>
             <View style={styles.row}>
                 <CustomBtn title="useCard" onPress={() => navigation.navigate('useCard')} />
-                <CustomBtn title="" onPress={() => navigation.navigate('')} />
+                <CustomBtn title="ListingDetail" onPress={() => navigation.navigate('ListingDetail')} />
             </View>
         </View>
     );

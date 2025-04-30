@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { FlatList, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,6 +15,7 @@ import Flist from './screen/Flatlist/Flist';
 import FlatListScreen from './screen/FlatListScreen';
 import ScrollViewScreen from './screen/ScrollViewScreen';
 import useCard from './screen/useCard';
+import ListingDetail from './screen/ListingDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +36,7 @@ const App = () => {
           <Stack.Screen name="FlatListScreen" component={FlatListScreen} />
           <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
           <Stack.Screen name="useCard" component={useCard} />
+          <Stack.Screen name="ListingDetail" component={ListingDetail} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
