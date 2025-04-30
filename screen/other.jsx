@@ -10,6 +10,8 @@ import ScrollViewScreen from './ScrollViewScreen';
 import Card from '../components/Card';
 import useCard from './useCard';
 import ListingDetail from './ListingDetail';
+import ViewImageScreen from './ViewImageScreen';
+import MessagesScreen from './MessagesScreen';
 
 const Other = ({ navigation }) => {
     return (
@@ -35,6 +37,10 @@ const Other = ({ navigation }) => {
             <View style={styles.row}>
                 <CustomBtn title="useCard" onPress={() => navigation.navigate('useCard')} />
                 <CustomBtn title="ListingDetail" onPress={() => navigation.navigate('ListingDetail')} />
+            </View>
+            <View style={styles.row}>
+                <CustomBtn title="ViewImageScreen" onPress={() => navigation.navigate('ViewImageScreen')} />
+                <CustomBtn title="MessagesScreen" onPress={() => navigation.navigate('MessagesScreen')} />
             </View>
         </View>
     );

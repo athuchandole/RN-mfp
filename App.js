@@ -16,6 +16,8 @@ import FlatListScreen from './screen/FlatListScreen';
 import ScrollViewScreen from './screen/ScrollViewScreen';
 import useCard from './screen/useCard';
 import ListingDetail from './screen/ListingDetail';
+import ViewImageScreen from './screen/ViewImageScreen';
+import MessagesScreen from './screen/MessagesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +39,8 @@ const App = () => {
           <Stack.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
           <Stack.Screen name="useCard" component={useCard} />
           <Stack.Screen name="ListingDetail" component={ListingDetail} />
+          <Stack.Screen name="ViewImageScreen" component={ViewImageScreen} />
+          <Stack.Screen name="MessagesScreen" component={MessagesScreen} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
