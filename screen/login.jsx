@@ -1,4 +1,4 @@
-// screen/login.jsx
+// screen/Login.jsx
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native';
@@ -7,29 +7,40 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignUp = () => {
-    Alert.alert('Sign Up Details', `Email: ${email}\nPassword: ${password}`);
+  const handleLogin = () => {
+    Alert.alert('Login Details', `Email: ${email}\nPassword: ${password}`);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.signup}>Sign Up</Text>
+      <Text style={styles.title}>LOGIN</Text>
+
+      <Text style={styles.label}>Email</Text>
       <TextInput
-        placeholder="Enter Email Id"
+        placeholder="Email"
         style={styles.input}
         value={email}
         onChangeText={setEmail}
+        keyboardType="email-address"
+        autoCapitalize="none"
       />
+
+      <Text style={styles.label}>Password</Text>
       <TextInput
-        placeholder="Enter Password"
+        placeholder="Password"
         style={styles.input}
-        secureTextEntry
         value={password}
         onChangeText={setPassword}
+        secureTextEntry
       />
-      <TouchableOpacity style={styles.btn} onPress={handleSignUp}>
-        <Text style={styles.btntext}>Sign Up</Text>
+
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>LOG IN</Text>
       </TouchableOpacity>
+
+      <Text style={styles.link}>Forgot password?</Text>
+      <Text style={styles.link}>Sign up</Text>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -39,30 +50,44 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    paddingHorizontal: 30,
     justifyContent: 'center',
-    padding: '10',
   },
-  signup: {
-    fontSize: 50,
-    margin: 10,
-    color: 'blue',
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: 30,
+    color: '#001F3F',
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 5,
+    color: '#001F3F',
   },
   input: {
-    width: '80%',
-    borderWidth: 2,
-    borderColor: 'blue',
-    margin: '10',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 20,
   },
-  btn: {
-    backgroundColor: 'pink',
-    width: '50%',
-    margin: 20,
-    padding: 10,
+  button: {
+    backgroundColor: '#001F3F',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginVertical: 10,
   },
-  btntext: {
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  link: {
+    color: '#001F3F',
     textAlign: 'center',
-    fontSize: 20,
+    marginTop: 10,
+    textDecorationLine: 'underline',
   },
 });
 
